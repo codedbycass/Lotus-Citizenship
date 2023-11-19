@@ -11,7 +11,7 @@ const studyController = require("../controllers/study");
 const accountController = require("../controllers/account")
 const { ensureAuth, ensureGuest } = require("../middleware/auth");
 
-//Main Routes - simplified for now; routes are written close to logical order in site map
+//Main Routes - routes are written close to logical order of flow in site map
 router.get("/", homeController.getIndex); // connected to index.ejs | clear; css later 
 router.get("/login", authController.getLogin); // connected to signup.ejs | clear; css later | citizenshipappcm@gmail.com, november
 router.post("/login", authController.postLogin); // connected to login.ejs | clear; css later
@@ -19,6 +19,7 @@ router.get("/profile", ensureAuth, postsController.getProfile); // connected to 
 router.get("/about", aboutController.getAbout); // QUESTION why is getAbout not yellow, even though it is being called from controller?
 router.get("/study", ensureAuth, studyController.getStudy); // Renders page
 router.get("/account", ensureAuth, accountController.getAccount); // Renders page
+router.post("/account", ensureAuth, accountController.postPersonal); // Users send a form to personalize
 router.get("/feed", ensureAuth, postsController.getFeed);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
