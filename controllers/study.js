@@ -7,7 +7,7 @@ const Exam = require("../models/Exam");
         try {
             const examData = await Exam.find();
             console.log(examData); // Log the data
-            res.render("study.ejs");
+            res.render("study.ejs", {exam: examData});
         } catch (error) {
             console.log(error);
         }
