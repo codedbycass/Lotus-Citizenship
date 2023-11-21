@@ -1,54 +1,46 @@
 <%- include('partials/nav') -%>
-<div class="container">
-  <div class="row mt-5">
-      <!-- <div class="col-6"> removing this puts everything in a row--> 
-          <div class="mt-5">
+<div class="landingContainer">
+  <!-- <div class="row mt-5"> -->
+          <!-- <div class="mt-5"> -->
             <div>
-              <p class="welcome">Welcome, <%= user.userName %>!</p>
-              <p><strong>Email</strong>: <%= user.email %></p>
-              <a href="/logout" class="col-3 btn btn-primary">Logout</a>
+              <h2 class="welcome">Welcome, <%= user.userName %>!</h2>
+              <!-- <p><strong>Email</strong>: <%= user.email %></p>
+              <a href="/logout" class="col-3 btn btn-primary">Logout</a> -->
             </div>
             <section class="welcome">
-              <h2>Welcome to Lotus Citizenship</h2>
-              <p>Paragraph about Mission</p>
-              <div class="card why">
-                <h3>Why</h3>
-                <p>Paragraph explaining why this project came to be</p>
+              <div class="main">
+                <div>
+                  <h2>Begin your path from Lao to US Citizenship</h2>
+                  <h3 class="tagline">Our goal is accessibility: in technology, language, and US citizenship.</h3>
+                </div>
+              <div id="carousel">
+                <div class="card why">
+                  <h3>Why</h3>
+                  <p>Paragraph explaining why this project came to be</p>
+                  <button class="carousel" onclick="nextSlide()">Next ➜</button>
+                </div>
+                <div class="card features">
+                  <h3>English to Lao</h3>
+                  <p>Paragraph explaining language access</p>
+                  <button>Study now</button>
+                  <button class="carousel" onclick="nextSlide()">Next ➜</button>
+                </div>
+                <div class="card features">
+                  <h3>Text to speech</h3>
+                  <p>Paragraph explaining text to speech</p>
+                  <button>Study now</button>
+                  <button class="carousel" onclick="nextSlide()">Next ➜</button>
+                </div>
+                <div class="card personalizatoin">
+                  <h3>Personalization</h3>
+                  <p>Paragraph explaining onboarding</p>
+                  <button>Personalize my experience</button>
+                  <button class="carousel" onclick="nextSlide()">Next ➜</button>
+                </div>
               </div>
-              <div class="card features">
-                <h3>English to Lao</h3>
-                <p>Paragraph explaining language access</p>
-                <button>Study now</button>
-              </div>
-              <div class="card features">
-                <h3>Text to speech</h3>
-                <p>Paragraph explaining text to speech</p>
-                <button>Study now</button>
-              </div>
-              <div class="card personalizatoin">
-                <h3>Personalization</h3>
-                <p>Paragraph explaining onboarding</p>
-                <button>Personalize my experience</button>
-              </div>
+            </div>
             </section>
-          </div>
-      <!-- </div> -->
-      
-      <div class="col-6">
-        <ul class="row list-unstyled">
-        <% for(var i=0; i<posts.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/post/<%= posts[i]._id%>">
-              <img class="img-fluid" src="<%= posts[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-        <div class="row justify-content-center mt-5">
-          <a class="btn btn-primary" href="/feed">Return to Feed</a>
-        </div>  
-      </div>  
-    </div>
+          <!-- </div> -->
   </div>
-</div>
+
 <%- include('partials/footer') -%>

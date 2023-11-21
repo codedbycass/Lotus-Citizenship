@@ -17,12 +17,15 @@ router.get("/login", authController.getLogin); // connected to signup.ejs | clea
 router.post("/login", authController.postLogin); // connected to login.ejs | clear; css later
 router.get("/profile", ensureAuth, postsController.getProfile); // connected to profile.ejs
 router.get("/about", aboutController.getAbout); // QUESTION why is getAbout not yellow, even though it is being called from controller?
-router.get("/study", ensureAuth, studyController.getStudy); // Renders page
 router.get("/account", ensureAuth, accountController.getAccount); // Renders page
 router.post("/account", ensureAuth, accountController.postPersonal); // Users send a form to personalize
 router.get("/feed", ensureAuth, postsController.getFeed);
 router.get("/signup", authController.getSignup);
 router.post("/signup", authController.postSignup);
 router.get("/logout", authController.logout);
+
+//Routes for study page
+router.get("/study", ensureAuth, studyController.getExam); // Renders page
+
 
 module.exports = router;

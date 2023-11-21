@@ -1,12 +1,23 @@
 <%- include('partials/nav') -%>
 <div class="container">
-  <div class="row mt-5">
-          <div class="mt-5">
+    <div class="row mt-5">
+        <div class="mt-5">
             <section class="welcome">
-              <h2>Study Page</h2>
-              <p>Paragraph about Mission</p>
+                <h2>Study page</h2>
             </section>
-          </div>
+            <section>
+                <ul class="row list-unstyled">
+                    <% for (let i=0; i<exam.length; i++) {%>
+                        <li>
+                        <p><%=exam[i].question%></p>
+                        <p><%=exam[i].answer%></p>
+                        <span><button class="check">Done</button></span>
+                        <span><button class="fa fa-trash"></button></span>
+                        </li>
+                    <% } %>
+                </ul>
+            </section>
+        </div>
         <div class="col-6">  
         </div>  
     </div>

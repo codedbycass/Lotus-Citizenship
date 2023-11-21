@@ -1,0 +1,105 @@
+html {
+    font-size: 62.5%;
+}
+
+:root {
+    --white: rgb(255, 255, 255);
+    --green: rgb(80,139,70);
+    --darkgreen: rgb(90, 145, 75);
+    --purple: rgb(116, 83, 121);
+    --lightpurple: rgb(202, 202, 230); 
+}
+
+/* NAVIGATION HEADER */
+.navContainer {
+    background: var(--green);
+    text-align: center;
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3); 
+    padding: 2rem;
+}
+
+.navContainer h1 {
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 5rem;
+    letter-spacing: .5rem;
+}
+
+.lotusImg {
+    width: 6%;
+}
+
+.mainNav a {
+    text-decoration: none;
+    font-size: 2.5rem;
+    padding: 1rem;
+    color: var(--white);
+    letter-spacing: .1rem;
+}
+
+.mainNav a:hover {
+    color: var(--purple);
+}
+
+/* LANDING PAGE */
+
+.landingContainer {
+    margin: 0 10rem;
+}
+
+div.main {
+    display: flex;
+}
+
+/*carousel*/
+#carousel {
+    width: 100%;
+    overflow: hidden;
+    }
+.card {
+    display: none;
+    border-radius: 1.5rem;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3); 
+    padding: 2rem;
+}
+
+.card:first-child {
+    display: block;
+}
+
+button.carousel {
+    border-radius: .5rem;
+    border: none;
+    font-size: 2rem;
+    background: whitesmoke;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3); 
+    display: block;
+    position: absolute;
+    right: 1rem;
+}
+
+/*styling*/
+h2.welcome {
+    font-size: 1.8rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: var(--white);
+    padding: 1rem;
+    font-weight: 100;
+}
+
+.main div {
+    padding: 5rem 1rem;
+}
+
+.main h2 {
+    font-size: 8rem;
+}
+
+.tagline {
+    font-size: 3rem;
+    font-style: italic;
+    padding: 2rem 0;
+    color: var(--purple);
+}

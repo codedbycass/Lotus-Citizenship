@@ -8,7 +8,7 @@
             </section>
             
             <section class="personalize">
-            <form action="/account" enctype="multipart/form-data" method="POST">
+            <form action="/account" method="POST">
               <label for="age">How old are you?</label>
               <select id="age" name="age">
                 <option value="Under18">Under 18</option>
@@ -42,10 +42,31 @@
               <ul class="row list-unstyled">
                 <% for (let i=0; i <personalize.length; i++) {%>
                   <li>
-                    <span>Age:<%= personalize[i].age %></span>
-                    <span>You feel comfortable speaking English:<%= personalize[i].lang %></span>
-                    <span>You have been an a legal permanent resident for: <%= personalize[i].lpr %></span>
-                    <span>You have public benefits: <%= personalize[i].pb %></span>
+                    <!--displays user input-->
+                    <p><%=personalize[i].age%></p>
+                    <p><%=personalize[i].lang%></p>
+                    <p><%=personalize[i].lpr%></p>
+                    <p><%=personalize[i].pb%></p>
+                    <!--displays personalized responses-->
+                    <% if (personalize[i].age === 'Under18') { %>
+                      <p>You must be 18 to apply for US citizenship.</p>
+                    <% } else if (personalize[i].age === 'Over18' && personalize[i].lpr === '5 years or more' && personalize[i].pb === 'Yes') { %>
+                      <p>You can begin your path to US citizenship! You must study for the exam in English. You qualify for the fee waiver since you have public benefits.</p>
+                    <% } else if (personalize[i].age === 'Over18' && personalize[i].lpr === '5 years or more' && personalize[i].pb === 'No') { %>
+                      <p>You can begin your path to US citizenship! You must study for the exam in English. You must pay for the test since you do not qualify for the fee waiver since you do not have public benefits.</p>
+                    <% } else if ((personalize[i].age === 'Over50' && personalize[i].lpr === '20 years or more' && personalize[i].lang === 'Yes' && personalize[i].pb === 'Yes')) { %>
+                      <p>You can begin your path to citizenship and study now! You can take the test in Lao and qualify for the fee waiver since you have public benefits.</p>
+                    <% } else if ((personalize[i].age === 'Over50' && personalize[i].lpr === '20 years or more' && personalize[i].lang === 'Yes' && personalize[i].pb === 'No')) { %>
+                      <p>You can begin your path to citizenship and study now! You can take the test in Lao, but you must pay for the test since you do not qualify for the fee waiver since you do not have public benefits.</p>
+                    <% } else if ((personalize[i].age === 'Over55' && personalize[i].lpr === '15 years or more' && personalize[i].lang === 'Yes' && personalize[i].pb === 'Yes')) { %>
+                      <p>You can begin your path to citizenship and study now! You can take the test in Lao and qualify for the fee waiver since you have public benefits.</p>
+                    <% } else if ((personalize[i].age === 'Over55' && personalize[i].lpr === '15 years or more' && personalize[i].lang === 'Yes' && personalize[i].pb === 'No')) { %>
+                      <p>You can begin your path to citizenship and study now! You can take the test in Lao, but you must pay for the test since you do not qualify for the fee waiver since you do not have public benefits.</p>
+                    <% } else if (personalize[i].age === 'Over65' && personalize[i].lpr === '20 years or more' && personalize[i].lang === 'Yes' && personalize[i].pb === 'Yes') { %>
+                      <p>You qualify for special exceptions. You can only study 10 questions and can take the test in Lao. If so, you must bring an interpreter who is fluent in both English in Lao. They cannot be your family member. You qualify for the fee waiver since you have public benefits.</p>
+                    <% } else if (personalize[i].lpr === 'Under 5 Years') { %>
+                      <p>You must be a legal permanent resident for 5 years to qualify for US citizenship.</p>
+                    <% } %>                    
                     <span><button class="check">Done</button></span>
                     <span><button class="fa fa-trash" aria-hidden="true"></button></span>
                   </li>
@@ -53,6 +74,7 @@
               </ul>
             </section>
           </div>
+          
       <div class="col-6">  
       </div>  
     </div>
