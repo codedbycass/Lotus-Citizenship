@@ -73,3 +73,25 @@ function toggleAnswer(button) {
       answers[i].style.display = (answers[i].style.display === 'none' || answers[i].style.display === '') ? 'block' : 'none';
   }
 }
+
+const question = document.getElementsByClassName("speechQ");
+const answer = document.getElementsByClassName("speechA");
+const synth = window.speechSynthesis;
+
+Array.from(question).forEach(function(element) {
+      element.addEventListener('click', function(){
+        console.log('this button works!')
+        const english = this.parentNode.childNodes[1].innerText
+        let toSpeech = new SpeechSynthesisUtterance(english)
+        synth.speak(toSpeech)
+      });
+});
+
+Array.from(answer).forEach(function(element) {
+  element.addEventListener('click', function(){
+    console.log('this button works!')
+    const english = this.parentNode.childNodes[9].innerText
+    let toSpeech = new SpeechSynthesisUtterance(english)
+    synth.speak(toSpeech)
+  });
+});

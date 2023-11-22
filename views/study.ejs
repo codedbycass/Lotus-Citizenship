@@ -5,9 +5,11 @@
             <% exam.map((exam, index) => {%>
                 <div class="questionHolder" data-object-id="<%=exam._id%>">
                     <p><%=exam.questionEng%></p>
+                    <span class="speechQ"><img src="imgs/icons8-listen-96.png"></span>
                     <p><%=exam.questionLao%></p>
-                        <button class="toggle" onclick="toggleAnswer(this)">Show Answer</button>
+                    <button class="toggle" onclick="toggleAnswer(this)">Show Answer</button>
                     <p class="answer toggle"><%=exam.answerEng%></p>
+                    <a class="speechA answer"><img src="imgs/icons8-listen-96.png"></a>
                     <p class="answer toggle"><%=exam.answerLao%></p>
                 </div>
             <% }) %>
