@@ -2,11 +2,11 @@ const mongoose = require("mongoose");
 
 const ExamSchema = new mongoose.Schema(
     {
-    question: {
+    questionEng: {
         type: String,
         required: true,
     },
-    answer: {
+    questionLao: {
         type: String,
         required: true,
     },

@@ -3,22 +3,41 @@
     <div class="row mt-5">
         <div class="mt-5">
             <section class="welcome">
-                <h2>Study page</h2>
+                
             </section>
             <section>
-                <ul class="row list-unstyled">
-                    <% for (let i=0; i<exam.length; i++) {%>
-                        <li>
-                        <p><%=exam[i].question%></p>
-                        <p><%=exam[i].answer%></p>
-                        <span><button class="check">Done</button></span>
-                        <span><button class="fa fa-trash"></button></span>
-                        </li>
-                    <% } %>
-                </ul>
             </section>
         </div>
-        <div class="col-6">  
-        </div>  
+            <h1>Study for US Citizenship</h1>
+            <main>
+                <button id="prev"></button>
+                <div id="card">
+                  <div class="side front">
+                    <ul class="row list-unstyled">
+                        <% exam.map((exam, index) => {%>
+                            <li data-object-id="<%=exam._id%>">
+                            <p><%=exam.questionEng%></p>
+                            <p><%=exam.questionLao%></p>
+                            </li>
+                        <% }) %>
+                    </ul>
+                  </div>
+                  <div class="side back">
+                    <ul class="row list-unstyled">
+                        <% answer.map((answer, index) => {%>
+                            <li data-object-id="<%=answer._id%>">
+                            <p><%=answer.answerEng%></p>
+                            <p><%=answer.questionLao%></p>
+                            </li>
+                        <% }) %>
+                    </ul>
+                  </div>
+                </div>
+                <button id="next"></button>
+              </main>
+          <footer>
+            <div id="count"></div>
+          </footer>  
     </div>
 </div>
+<%- include('partials/footer') -%>
