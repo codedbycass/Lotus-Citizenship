@@ -45,75 +45,31 @@ function nextSlide() {
 // // Start the automatic sliding on page load
 // resetInterval();
 
-// Flashcard design on study page from codepen; make this your own
-//variables
-const card = document.querySelector("#card");
-const front = document.querySelector(".front");
-const back = document.querySelector(".back");
-const next = document.querySelector("#next");
-const prev = document.querySelector("#prev");
-const count = document.querySelector("#count");
-// const endpoint =
-//   "https://gist.githubusercontent.com/cahdeemer/90a32410656e2aa33d29b694bc28ab08/raw/4c7ae385f4f1c1ec7c42ef0154f927ace3d3f12e/interview_prep.json";
-// const questions = [];
+// let currentCard = 0;
 
-let current = 0;
-let turned = false;
+// function flipCard(card) {
+//     card.classList.toggle('flipped');
+// }
 
-//remember that fetch doesn't return the data, fetch returns a promise
-// fetch(endpoint)
-//   //blog.json also returns a promise
-//   .then(blob => blob.json())
-//   //using spread operator means that we don't get an nested arrays, we just get an array
-//   .then(data => questions.push(...data))
-//   //we set the initial state after data is ready
-//   .then(populateNextCard);
+// function nextCard() {
+//     const cards = document.querySelectorAll('.card');
+//     // Hide the current card
+//     flipCard(cards[currentCard].querySelector('.card-inner'));
+//     // Move to the next card
+//     currentCard = (currentCard + 1) % cards.length;
+//     // Show the next card
+//     flipCard(cards[currentCard].querySelector('.card-inner'));
+// }
 
-function resetCard() {
-  prev.disabled = false;
-  next.disabled = false;
-  card.classList.remove("turned");
-}
+function toggleAnswer(button) {
+  // Get the parent <li> element
+  var listItem = button.parentElement;
 
-function populateNextCard() {
-  resetCard();
-  front.innerHTML = `<p>${questions[current].question}</p>`;
-  back.innerHTML = `<p>${questions[current].answer}</p>`;
-  count.innerHTML = `<p>${[current + 1]} / ${questions.length}</p>`;
-  current++;
-}
+  // Get all elements with the class "answer" within the parent <li>
+  var answers = listItem.getElementsByClassName('answer');
 
-function getNextCard() {
-  if (current < questions.length) {
-    populateNextCard();
-  } else {
-    next.disabled = true;
+  // Loop through the answer elements and toggle their visibility
+  for (var i = 0; i < answers.length; i++) {
+      answers[i].style.display = (answers[i].style.display === 'none' || answers[i].style.display === '') ? 'block' : 'none';
   }
 }
-
-function getPrevCard() {
-  if (current > 1) {
-    resetCard();
-    front.innerHTML = `<p>${questions[current - 2].question}</p>`;
-    back.innerHTML = `<p>${questions[current - 2].answer}</p>`;
-    count.innerHTML = `<p>${[current - 1]} / ${questions.length}</p>`;
-    current--;
-  } else {
-    prev.disabled = true;
-  }
-}
-
-function toggleTurn(e) {
-  turned = !turned;
-  if (turned) {
-    this.classList.add("turned");
-  } else {
-    this.classList.remove("turned");
-  }
-}
-
-
-card.addEventListener("click", toggleTurn);
-next.addEventListener("click", getNextCard);
-prev.addEventListener("click", getPrevCard);
-

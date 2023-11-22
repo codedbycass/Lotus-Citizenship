@@ -2,42 +2,16 @@
 <div class="container">
     <div class="row mt-5">
         <div class="mt-5">
-            <section class="welcome">
-                
-            </section>
-            <section>
-            </section>
-        </div>
-            <h1>Study for US Citizenship</h1>
-            <main>
-                <button id="prev"></button>
-                <div id="card">
-                  <div class="side front">
-                    <ul class="row list-unstyled">
-                        <% exam.map((exam, index) => {%>
-                            <li data-object-id="<%=exam._id%>">
-                            <p><%=exam.questionEng%></p>
-                            <p><%=exam.questionLao%></p>
-                            </li>
-                        <% }) %>
-                    </ul>
-                  </div>
-                  <div class="side back">
-                    <ul class="row list-unstyled">
-                        <% answer.map((answer, index) => {%>
-                            <li data-object-id="<%=answer._id%>">
-                            <p><%=answer.answerEng%></p>
-                            <p><%=answer.questionLao%></p>
-                            </li>
-                        <% }) %>
-                    </ul>
-                  </div>
+            <% exam.map((exam, index) => {%>
+                <div class="questionHolder" data-object-id="<%=exam._id%>">
+                    <p><%=exam.questionEng%></p>
+                    <p><%=exam.questionLao%></p>
+                        <button class="toggle" onclick="toggleAnswer(this)">Show Answer</button>
+                    <p class="answer toggle"><%=exam.answerEng%></p>
+                    <p class="answer toggle"><%=exam.answerLao%></p>
                 </div>
-                <button id="next"></button>
-              </main>
-          <footer>
-            <div id="count"></div>
-          </footer>  
+            <% }) %>
+        </div>
     </div>
 </div>
 <%- include('partials/footer') -%>

@@ -9,6 +9,7 @@ const Answer = require("../models/Answer");
             const examData = await Exam.find();
             const answerData = await Answer.find();
             console.log(examData); // Log the data
+            console.log(answerData);
             res.render("study.ejs", {exam: examData, answer: answerData});
         } catch (error) {
             console.log(error);

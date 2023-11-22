@@ -10,6 +10,14 @@ const ExamSchema = new mongoose.Schema(
         type: String,
         required: true,
     },
+    answerEng: {
+        type: String,
+        required: true,
+    },
+    answerLao: {
+        type: String,
+        required: true,
+    },
     },
 );
 
