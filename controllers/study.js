@@ -1,16 +1,15 @@
 const { db } = require("../models/User");
 const Exam = require("../models/Exam");
-const Answer = require("../models/Answer");
+// const Answer = require("../models/Answer");
 
 //render the about page
     module.exports = {
     getExam: async (req, res) => {
         try {
             const examData = await Exam.find();
-            const answerData = await Answer.find();
+            const sum = await Exam.countDocuments({ answer: true});
             console.log(examData); // Log the data
-            console.log(answerData);
-            res.render("study.ejs", {exam: examData, answer: answerData});
+            res.render("study.ejs", {exam: examData, sum: sum});
         } catch (error) {
             console.log(error);
         }

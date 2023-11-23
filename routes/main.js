@@ -26,6 +26,7 @@ router.get("/profile", ensureAuth, postsController.getProfile); // connected to 
 //Routes for study page
 router.get("/study", ensureAuth, studyController.getExam); // Renders page and gets questions in eng/lao
 router.put("/study/updateSurvey", ensureAuth, studyController.updateSurvey) // boolean value for if answer correct or not
+// router.get("/study/correct", ensureAuth, studyController.getCorrect) // boolean value for if answer correct or not
 
 //Routes for account page
 router.get("/account", ensureAuth, accountController.getAccount); // Renders page

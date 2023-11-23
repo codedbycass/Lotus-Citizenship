@@ -2,6 +2,7 @@
 <div class="container">
     <div class="row mt-5">
         <div class="mt-5">
+            <div id="sum-container"><p class="numberCorrect">Correct: <%= sum %> / 100</p></div>
             <% exam.map((exam, index) => {%>
                 <div class="questionHolder" data-object-id="<%=exam._id%>">
                     <p><%=exam.questionEng%></p>
