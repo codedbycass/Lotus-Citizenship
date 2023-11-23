@@ -14,5 +14,18 @@ const Answer = require("../models/Answer");
         } catch (error) {
             console.log(error);
         }
-    },   
+    },
+    updateSurvey: async (req, res) => {
+        try {
+            console.log("Received form data:", req.body);
+            await Exam.findOneAndUpdate(
+            { _id: req.body.id },
+            {
+                $set: { answer: true },
+            }
+        );
+            res.redirect(`/study`);
+            } catch (err) {
+        }
+    },
 };

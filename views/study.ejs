@@ -11,6 +11,19 @@
                     <p class="answer toggle"><%=exam.answerEng%></p>
                     <a class="speechA answer"><img src="imgs/icons8-listen-96.png"></a>
                     <p class="answer toggle"><%=exam.answerLao%></p>
+                    <label for="answer" class="answer">Did you answer correctly?</label>
+                    <form action="/study/updateSurvey/?_method=PUT" method="POST"> 
+                        <input type="hidden" name="id" value="<%= exam._id %>"> 
+                        <span class="answer">
+                          <input type="radio" id="yes" name="answer" value="yes" aria-labelledby="answer" required>
+                          <label for="yes">Yes</label>
+                        </span>
+                        <div class="answer">
+                          <input type="radio" id="no" name="answer" value="no" aria-labelledby="answer" required>
+                          <label for="no">No</label>
+                        </div>
+                        <button type="submit" class="answer">Submit</button>
+                    </form>
                 </div>
             <% }) %>
         </div>
