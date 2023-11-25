@@ -7,7 +7,7 @@ const PersonalizeSchema = new mongoose.Schema(
     // lpr: String,
     // pb: String,
     age: {
-      type: Number,
+      type: String,
       required: true,
     },
     lang: {

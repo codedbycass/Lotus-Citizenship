@@ -65,6 +65,7 @@ div.main {
     width: 100%;
     overflow: hidden;
     }
+
 .card {
     display: none;
     border-radius: 1.5rem;
@@ -125,7 +126,10 @@ p {
     text-align: center;
   }
 
-  .questionHolder {
+  .questionHolder,
+  .personalize,
+  .rawUserInput,
+  .surveyMessage {
     font-size: 2rem;
     text-align: center;
     margin: 1rem 10rem;
@@ -162,3 +166,22 @@ button.toggle {
     border-radius: .5rem;
 }
 
+/* Account page */
+
+  form {
+    display: flex;
+    flex-direction: column;
+    max-width: 300px; /* Adjust max-width as needed */
+    margin: auto; /* Center the form */
+  }
+
+  label {
+    margin-bottom: 5px; /* Adjust margin as needed */
+  }
+
+  select, button {
+    margin-bottom: 15px; /* Adjust margin as needed */
+  }
+.surveyMessage span {
+    color: var(--purple);
+}
