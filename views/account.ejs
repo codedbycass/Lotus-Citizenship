@@ -2,18 +2,11 @@
 <div class="container">
   <div class="row mt-5">
           <div class="mt-5">
-            <h2>Personalize your experience</h2>
+            <h2>Welcome!</h2>
             <p>Answer the questions below to see if you are eligible for the US Citizenship test. If eligible, you may be qualified for or a language waiver and fee waiver! </p>
             <section class="personalizeRes">
                 <% for (let i=0; i <personalize.length; i++) {%>
                     <!--displays user input-->
-                    <div class="rawUserInput">
-                    <h4>Your responses</h4>
-                    <p><%=personalize[i].age%></p>
-                    <p><%=personalize[i].lang%></p>
-                    <p><%=personalize[i].lpr%></p>
-                    <p><%=personalize[i].pb%></p>
-                    </div>
                     <!--displays personalized responses-->
                     <div class="surveyMessage">
                     <% if (personalize[i].age === 'under 18') { %>
@@ -35,10 +28,9 @@
                     <% } else if (personalize[i].lpr === 'under 5 Years') { %>
                       <p>You have been a legal permanent resident for <span><%=personalize[i].lpr%></span>. You must be a legal permanent resident for 5 years to qualify for US citizenship.</p>
                     <% } %>
-                    <button>Learn More</button>  
+                    <button class="col-3 btn btn-primary">Learn More</button>  
                     </div>                 
-                    <!-- <span><button class="check">Done</button></span>
-                    <span><button class="fa fa-trash" aria-hidden="true"></button></span> -->
+
                 <% } %>
             </section>
             <section class="personalize">
@@ -74,3 +66,5 @@
           </div>
     </div>
 </div>
+
+<%- include('partials/footer') -%>

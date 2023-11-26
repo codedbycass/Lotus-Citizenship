@@ -8,7 +8,7 @@
                     <p><%=exam.questionEng%></p>
                     <span class="speechQ"><img src="imgs/icons8-listen-96.png"></span>
                     <p><%=exam.questionLao%></p>
-                    <button class="toggle" onclick="toggleAnswer(this)">Show Answer</button>
+                    <button class="toggle col-3 btn btn-primary" onclick="toggleAnswer(this)">Show Answer</button>
                     <p class="answer toggle"><%=exam.answerEng%></p>
                     <a class="speechA answer"><img src="imgs/icons8-listen-96.png"></a>
                     <p class="answer toggle"><%=exam.answerLao%></p>
@@ -23,7 +23,7 @@
                           <input type="radio" id="no" name="answer" value="no" aria-labelledby="answer" required>
                           <label for="no">No</label>
                         </div>
-                        <button type="submit" class="answer">Submit</button>
+                        <button type="submit" class="answer col-3 btn btn-primary">Submit</button>
                     </form>
                 </div>
             <% }) %>

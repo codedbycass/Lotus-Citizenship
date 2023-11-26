@@ -5,9 +5,42 @@ html {
 :root {
     --white: rgb(255, 255, 255);
     --green: rgb(80,139,70);
-    --darkgreen: rgb(90, 145, 75);
     --purple: rgb(116, 83, 121);
     --lightpurple: rgb(202, 202, 230); 
+}
+
+/* ROOT PAGE */
+.loginHeader a {
+    text-decoration: none;
+    font-size: 5rem;
+    letter-spacing: .5rem;
+    text-transform: uppercase;
+    color: var(--green);
+}
+
+.loginHeader + span {
+    font-size: 2rem;
+    letter-spacing: .2rem;
+}
+
+.loginImg {
+    width: 20%;
+}
+
+.loginBody {
+    padding-top: 10rem;
+}
+
+.col-3.btn.btn-primary,
+.btn.btn-primary {
+    background: var(--green);
+    border: var(--purple);
+    font-size: 1.6rem;
+}
+
+.col-3.btn.btn-primary:hover,
+.btn.btn-primary:hover {
+    background: var(--lightpurple);
 }
 
 /* NAVIGATION HEADER */
@@ -48,7 +81,8 @@ html {
 
 /* LANDING PAGE */
 body {
-    padding-top: 20rem; /* Add a value equal to the height of your fixed header */;
+    padding-top: 25rem;
+    padding-bottom: 5rem; /* Add a value equal to the height of your fixed header */;
     margin: 0; /* Remove default margin to prevent unwanted space */
 }
 
@@ -60,11 +94,34 @@ div.main {
     display: flex;
 }
 
+.leftText {
+    margin-right: 5rem;
+}
+
 /*carousel*/
 #carousel {
     width: 100%;
     overflow: hidden;
+    margin-top: 5rem;
     }
+
+.card h3,
+.card p {
+    font-size: 2.5rem;
+    padding: 2rem 5rem;
+}
+
+.card h3 {
+    color: var(--purple);
+}
+
+.card h3:hover {
+    color: var(--purple);
+}
+
+.card p {
+    font-size: 1.6rem;
+}
 
 .card {
     display: none;
@@ -105,6 +162,8 @@ h2.welcome {
 
 .main h2 {
     font-size: 8rem;
+    text-shadow: 2px 2px 4px var(--lightpurple);
+
 }
 
 .tagline {
@@ -119,48 +178,45 @@ p {
     padding: 0px 10%;
     font-size: 1.15em;
     line-height: 1.4;
-  }
-  
-  header,
-  footer {
-    text-align: center;
-  }
+}
 
-  .questionHolder,
-  .personalize,
-  .rawUserInput,
-  .surveyMessage {
+header,
+footer {
+    text-align: center;
+}
+.questionHolder,
+.personalize,
+.rawUserInput,
+.surveyMessage {
     font-size: 2rem;
     text-align: center;
     margin: 1rem 10rem;
     border-radius: 1.5rem;
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3); 
     padding: 2rem;
-  }
-
-  .questionHolder p {
+}
+.questionHolder p {
     padding: .5rem;
-  }
-
-  .answer {
+}
+.answer {
     display: none;
 }
-  
+
 button.toggle {
-  border-radius: .5rem;
-  border: none;
-  font-size: 2rem;
-  background: var(--lightpurple);
-  box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3); 
+    border-radius: .5rem;
+    border: none;
+    font-size: 2rem;
+    background: var(--lightpurple);
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3); 
 }
 
 .numberCorrect {
     text-align: center;
     position: fixed;
-    bottom: 0;
+    top: 50%;
     left: 0;
-    padding: 10px; /* Add padding or adjust as needed */
-    background-color: #fff; /* Add a background color if needed */
+    padding: 1rem; /* Add padding or adjust as needed */
+    background-color: var(--lightpurple); /* Add a background color if needed */
     z-index: 1000; /* Set a z-index to ensure it's above other elements */
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3); 
     border-radius: .5rem;
@@ -168,20 +224,36 @@ button.toggle {
 
 /* Account page */
 
-  form {
+form {
     display: flex;
     flex-direction: column;
-    max-width: 300px; /* Adjust max-width as needed */
+    max-width: 40rem; /* Adjust max-width as needed */
     margin: auto; /* Center the form */
-  }
+}
 
-  label {
-    margin-bottom: 5px; /* Adjust margin as needed */
-  }
+label {
+    margin-bottom: .5rem; /* Adjust margin as needed */
+    text-align: center;
+}
 
-  select, button {
-    margin-bottom: 15px; /* Adjust margin as needed */
-  }
+select, button {
+    margin-bottom: 1.5rem; /* Adjust margin as needed */
+}
+
 .surveyMessage span {
     color: var(--purple);
+}
+
+/*FOOTER STYLING*/
+
+footer {
+    background: var(--green);
+    text-align: center;
+    color: var(--white);
+    box-shadow: 0 1rem 1rem rgba(0, 0, 0, 0.3); 
+    padding: 1rem;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 1000;
 }
