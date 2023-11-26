@@ -2,11 +2,9 @@
 
 ## What
 This application is designed to assist Lao immigrants and refugees living in the US in initiating their journey toward obtaining US Citizenship. The app is crafted with a specific focus on Lao speakers, particularly the older generation who arrived in the US in the 80s and 90s as refugees who speak English as a second language and may have low digital skills.
-
-## Why
+### Why
 Many adults in my community have held a green card for over 20-30 years but have not pursued the naturalization process due to various factors: one of them being the dilemma of learning something new as an older person. This apps aims to meets users where they're at with language access; users can choose to study for their langauge of preference (English or Lao). The test is already challenging as is, by adding language access, users can focus solely on the content of citizenship process.
-
-## How
+### How
 Aside from language access, this app features text-to-speech for English questions and answers, replicating the real citizenship exam when the immigration officer asks questions in English. We know that one size does not fit all, and each user has a unique experience that they bring to the table. Users can personalize their experience to see if they are in fact qualified for the test, if they qualify for language waivers, application fee waivers, and other exemptions. 
 
 ## Technologies
