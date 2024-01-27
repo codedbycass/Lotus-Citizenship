@@ -102,7 +102,7 @@ div.main {
 #carousel {
     width: 100%;
     overflow: hidden;
-    margin-top: 5rem;
+    margin-top: 3rem;
     }
 
 .card h3,
@@ -161,7 +161,7 @@ h2.welcome {
 }
 
 .main h2 {
-    font-size: 8rem;
+    font-size: 6rem;
     text-shadow: 2px 2px 4px var(--lightpurple);
 
 }
@@ -202,6 +202,12 @@ footer {
     display: none;
 }
 
+#submitBtn {
+    position: relative;
+    left: 15rem;
+    margin-top: 2rem;
+}
+
 button.toggle {
     border-radius: .5rem;
     border: none;
@@ -215,11 +221,17 @@ button.toggle {
     position: fixed;
     top: 50%;
     left: 0;
-    padding: 1rem; /* Add padding or adjust as needed */
+    padding: 1.5rem; /* Add padding or adjust as needed */
     background-color: var(--lightpurple); /* Add a background color if needed */
     z-index: 1000; /* Set a z-index to ensure it's above other elements */
     box-shadow: 0 .5rem 1rem rgba(0, 0, 0, 0.3); 
     border-radius: .5rem;
+    font-size: 2rem;
+}
+
+.correct {
+    color: green;
+    font-weight: bolder;
 }
 
 /* Account page */
@@ -244,6 +256,16 @@ select, button {
     color: var(--purple);
 }
 
+.pageHeader,
+.accountP {
+    text-align: center;
+    font-size: 4rem;
+}
+
+.accountP {
+    font-size: 2rem;
+}
+
 /*FOOTER STYLING*/
 
 footer {
@@ -256,4 +278,8 @@ footer {
     bottom: 0;
     width: 100%;
     z-index: 1000;
+}
+
+.copyright {
+    color:rgb(192, 182, 193);
 }

@@ -2,10 +2,6 @@ const mongoose = require("mongoose");
 
 const PersonalizeSchema = new mongoose.Schema(
   {
-    // age: String,
-    // lang: String,
-    // lpr: String,
-    // pb: String,
     age: {
       type: String,
       required: true,
